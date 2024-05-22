@@ -1,0 +1,44 @@
+﻿@model Drogueria1._1_.Models.Bodega
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<div class="container mt-4">
+    <form class="bg-light p-4 rounded">
+        <h4 class="text-center mb-4">@ViewData["Title"]</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                Código
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.IdBodega)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                Nombre de la Bodega
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NombreBod)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                Dirección de la Bodega
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DirBodega)
+            </dd>
+        </dl>
+        <div class="mt-4">
+            <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.IdBodega">
+                <i class="fas fa-edit"></i> Modificar
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+}

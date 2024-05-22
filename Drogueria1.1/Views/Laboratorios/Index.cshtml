@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Drogueria1._1_.Models.Laboratorio>
+
+@{
+    ViewData["Title"] = "Laboratorios";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.IdLaboratorio)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NombreLab)</td>
+                    <td class="text-center">
+                        <!-- Botones sin agrupación -->
+                        <a asp-action="Edit" asp-route-id="@item.IdLaboratorio" class="btn btn-primary">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdLaboratorio" class="btn btn-secondary">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdLaboratorio" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

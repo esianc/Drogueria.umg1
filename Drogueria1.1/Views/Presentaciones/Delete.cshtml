@@ -1,0 +1,30 @@
+﻿@model Drogueria1._1_.Models.Presentacion
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <label class="form-label">Código</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdPresentacion)
+        </dd>
+        <dt class="col-sm-2">
+            <label class="form-label">Descripción</label>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPresentacion" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+    </form>
+</div>

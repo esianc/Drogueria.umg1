@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Drogueria1._1_.Models.Tipodocumento>
+
+@{
+    ViewData["Title"] = "Tipo de documentos";
+}
+
+<h1>Tipo de documentos</h1>
+
+<div class="container mt-4">
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear</a>
+    </p>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Tipo transacción</th>
+                <th>Bodega</th>
+                <th>Sucursal</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CodigoDoc)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Tipotran)</td>
+                    <td>@Html.DisplayFor(modelItem => item.IdBodegaNavigation.IdBodega)</td>
+                    <td>@Html.DisplayFor(modelItem => item.IdSucursalNavigation.IdSucursal)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.CodigoDoc" class="btn btn-primary">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.CodigoDoc" class="btn btn-secondary">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.CodigoDoc" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

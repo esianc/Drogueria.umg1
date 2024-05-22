@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Drogueria1._1_.Models.Bodega>
+
+@{
+    ViewData["Title"] = "Bodegas";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <a asp-action="Create" class="btn btn-success">Crear nueva</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.IdBodega)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NombreBod)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DirBodega)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" class="btn btn-primary btn-sm mx-1" asp-route-id="@item.IdBodega">Editar</a>
+                            <a asp-action="Details" class="btn btn-secondary btn-sm mx-1" asp-route-id="@item.IdBodega">Detalles</a>
+                            <a asp-action="Delete" class="btn btn-danger btn-sm mx-1" asp-route-id="@item.IdBodega">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

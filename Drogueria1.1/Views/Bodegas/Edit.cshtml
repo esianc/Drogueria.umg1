@@ -1,0 +1,42 @@
+﻿@model Drogueria1._1_.Models.Bodega
+
+@{
+    ViewData["Title"] = "Editar Bodega";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit" class="bg-light p-4 rounded">
+                <h4 class="text-center mb-4">@ViewData["Title"]</h4>
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="IdBodega" />
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Nombre de la Bodega</label>
+                    <input asp-for="NombreBod" class="form-control" />
+                    <span asp-validation-for="NombreBod" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold">Dirección de la Bodega</label>
+                    <input asp-for="DirBodega" class="form-control" />
+                    <span asp-validation-for="DirBodega" class="text-danger"></span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save me-2"></i> Guardar
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left me-2"></i> Volver a la lista
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,39 @@
+﻿@model Drogueria1._1_.Models.Laboratorio
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <label for="IdLaboratorio" class="form-label">Código</label>
+                    <input asp-for="IdLaboratorio" class="form-control" />
+                    <span asp-validation-for="IdLaboratorio" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="NombreLab" class="form-label">Nombre</label>
+                    <input asp-for="NombreLab" class="form-control" />
+                    <span asp-validation-for="NombreLab" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

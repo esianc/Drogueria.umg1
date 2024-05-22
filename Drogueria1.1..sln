@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drogueria1.1.", "..\Drogueria1.1\Drogueria1.1\Drogueria1.1..csproj", "{F71D4652-287D-40EE-BBC5-1C17E8EF7221}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F71D4652-287D-40EE-BBC5-1C17E8EF7221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71D4652-287D-40EE-BBC5-1C17E8EF7221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71D4652-287D-40EE-BBC5-1C17E8EF7221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71D4652-287D-40EE-BBC5-1C17E8EF7221}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9A4AC7F-91E6-4C4E-8A7E-7E64A617224B}
+	EndGlobalSection
+EndGlobal

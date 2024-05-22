@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Drogueria1._1_.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Empleados";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Crear</a>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID Empleado</th>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.IdEmpleado)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                                <td>
+                                     <a asp-action="Edit" asp-route-id="@item.IdEmpleado" class="btn btn-primary">Editar</a>
+                                    <a asp-action="Details" asp-route-id="@item.IdEmpleado" class="btn btn-secondary">Detalles</a>
+                                    <a asp-action="Delete" asp-route-id="@item.IdEmpleado" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

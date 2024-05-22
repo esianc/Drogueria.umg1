@@ -1,0 +1,41 @@
+﻿@model Drogueria1._1_.Models.Bodega
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-4">
+    <form asp-action="Create" class="bg-light p-4 rounded">
+        <h4 class="text-center mb-4">Nueva Bodega</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label for="IdBodega" class="form-label">ID de la Bodega</label>
+            <input asp-for="IdBodega" class="form-control" id="IdBodega" />
+            <span asp-validation-for="IdBodega" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="NombreBod" class="form-label">Nombre</label>
+            <input asp-for="NombreBod" class="form-control" id="NombreBod" />
+            <span asp-validation-for="NombreBod" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label for="DirBodega" class="form-label">Dirección de la Bodega</label>
+            <input asp-for="DirBodega" class="form-control" id="DirBodega" />
+            <span asp-validation-for="DirBodega" class="text-danger"></span>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+    </form>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left me-1"></i>Regresar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
